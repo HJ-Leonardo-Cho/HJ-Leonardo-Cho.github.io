@@ -6,7 +6,14 @@
     <title>Hyeongjun Cho's Profile</title>
 <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-    .container { max-width: 800px; margin: 40px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+    .container { max-width: 800px; 
+                margin: 40px auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                position: relative;
+               }
     
     /* 헤더 부분 스타일 */
     .header {
@@ -47,11 +54,35 @@
         margin-top: 30px;
     }
     ul { padding-left: 20px; }
+
+/* 네비게이션 메뉴 스타일 */
+nav {
+    position: absolute;
+    top: 45px;
+    right: 40px;
+}
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+}
+nav a:hover {
+    color: #3498db;
+}
+    
 </style>
 
+
+    
 </head>
 <body>
     <div class="container">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="publications.html">Publications</a>
+        </nav>
         
         <div class="header">
             <div class="profile-photo">
