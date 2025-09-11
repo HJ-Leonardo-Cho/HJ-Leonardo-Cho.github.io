@@ -7,18 +7,42 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
         .container { max-width: 800px; margin: 40px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; position: relative; }
+        
+        /* 헤더 부분 스타일 */
         .header { display: flex; align-items: center; border-bottom: 2px solid #ecf0f1; padding-bottom: 20px; margin-bottom: 20px; }
         .profile-photo img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-right: 30px; }
         .profile-info h1 { margin: 0; color: #2c3e50; }
         .profile-info p { margin: 5px 0 15px 0; font-size: 1.1em; color: #555; }
-        .profile-info .links a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
-        h2 { color: #2c3e50; border-bottom: 1px solid #ecf0f1; padding-bottom: 10px; margin-top: 30px; }
-        ul { padding-left: 20px; list-style-type: none; }
-        li { margin-bottom: 15px; }
+        .profile-info a { text-decoration: none; font-weight: bold; color: #3498db; }
+        .profile-info a:visited { color: #3498db; }
+        .profile-info a:hover { color: #2980b9; }
+        .profile-info .links a { margin-right: 15px; }
+
         /* 네비게이션 메뉴 스타일 */
         nav { position: absolute; top: 45px; right: 40px; }
         nav a { margin-left: 20px; text-decoration: none; font-weight: bold; color: #555; font-size: 1.1em; }
         nav a:hover { color: #3498db; }
+
+        /* 본문 섹션 스타일 */
+        h2 { color: #2c3e50; border-bottom: 1px solid #ecf0f1; padding-bottom: 10px; margin-top: 30px; }
+        
+        /* --- Publication 페이지 꾸미기 시작 --- */
+        .publication-entry { display: flex; align-items: flex-start; margin-bottom: 40px; }
+        .conference-tag { flex-shrink: 0; width: 100px; margin-right: 20px; }
+        .publication-details { flex-grow: 1; }
+
+        .conf-button { display: block; padding: 8px 10px; border-radius: 5px; text-align: center; text-decoration: none; font-weight: bold; color: white; }
+        .conf-button.top-tier { background-color: #c0392b; }
+        .conf-button.major { background-color: #2980b9; }
+        .conf-button.etc { background-color: #555; }
+
+        .publication-details .title { font-size: 1.2em; margin: 0 0 5px 0; font-weight: bold; }
+        .publication-details .authors { margin: 0 0 5px 0; color: #666; }
+        .publication-details .venue { margin: 0 0 15px 0; font-style: italic; color: #888; }
+
+        .link-button { display: inline-block; padding: 5px 12px; margin-right: 10px; border: 1px solid #ccc; border-radius: 15px; text-decoration: none; color: #555; font-size: 0.9em; }
+        .link-button:hover { background-color: #f0f0f0; border-color: #aaa; }
+        /* --- Publication 페이지 꾸미기 끝 --- */
     </style>
 </head>
 <body>
@@ -31,36 +55,82 @@
         
         <div class="header">
             <div class="profile-photo">
-                <img src="MyPortrait.jpg" alt="Profile Picture">
+                <img src="mypicture.jpg" alt="Profile Picture">
             </div>
             <div class="profile-info">
                 <h1>Hyeongjun Cho</h1>
                 <p>
                     M.S. Student, Sungkyunkwan University<br>
-                    <a href="https://compass.skku.edu/" target="_blank">Compass Lab</a>
+                    <a href="https://skku-compasslab.github.io/compasslab/" target="_blank">Compass Lab</a>
                 </p>
                 <div class="links">
                     <a href="https://www.linkedin.com/in/hjleonardocho" target="_blank">LinkedIn</a>
-
-                    <a href="CV_Hyeongjun Cho_2.pdf" target="_blank">Curriculum Vitae</a>
+                    <a href="https://hj-leonardo-cho.github.io/" target="_blank">GitHub</a>
+                    <a href="CV_Hyeongjun_Cho.pdf" target="_blank">Curriculum Vitae</a>
                 </div>
             </div>
         </div>
 
         <section>
             <h2>Publications</h2>
-            <ul>
-                <li>
-                    <b>[PACT'25]</b> <strong>LibraPIM: Dynamic Load Rebalancing to Maximize Utilization in PIM-Assisted LLM Inference Systems</strong><br>
-                    <strong>Hyeongjun Cho</strong>, Yoonho Jang, Hyungi Kim, Seongwook Kim, Keewon Kwon, Gwngsun Kim and Seokin Hong<br>
-                    <i>The 34th International Conference on Parallel Architectures and Compilation Techniques</i>, 2025. (Accepted)
-                </li>
-                <li>
-                    <b>[DAC'25]</b> <strong>PIMPAL: Accelerating LLM Inference on Edge Devices via In-DRAM Arithmetic Lookup</strong><br>
-                    Yoonho Jang, <strong>Hyeongjun Cho</strong>, Yesin Ryu, Jungrae Kim and Seokin Hong<br>
-                    <i>Design Automation Conference</i>, 2025.
-                </li>
-                </ul>
+
+            <div class="publication-entry">
+                <div class="conference-tag">
+                    <a href="https://en.wikipedia.org/wiki/Parallel_Architectures_and_Compilation_Techniques" target="_blank" class="conf-button top-tier">PACT</a>
+                </div>
+                <div class="publication-details">
+                    <p class="title">LibraPIM: Dynamic Load Rebalancing to Maximize Utilization in PIM-Assisted LLM Inference Systems</p>
+                    <p class="authors"><strong>Hyeongjun Cho</strong>, Yoonho Jang, Hyungi Kim, Seongwook Kim, Keewon Kwon, Gwngsun Kim and Seokin Hong</p>
+                    <p class="venue"><em>The 34th International Conference on Parallel Architectures and Compilation Techniques, 2025</em></p>
+                    <div class="links">
+                        <a href="[YOUR_PDF_LINK_HERE].pdf" target="_blank" class="link-button">PDF</a>
+                        <a href="[YOUR_SLIDE_LINK_HERE].pptx" target="_blank" class="link-button">SLIDE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-entry">
+                <div class="conference-tag">
+                    <a href="https://en.wikipedia.org/wiki/Design_Automation_Conference" target="_blank" class="conf-button top-tier">DAC</a>
+                </div>
+                <div class="publication-details">
+                    <p class="title">PIMPAL: Accelerating LLM Inference on Edge Devices via In-DRAM Arithmetic Lookup</p>
+                    <p class="authors">Yoonho Jang, <strong>Hyeongjun Cho</strong>, Yesin Ryu, Jungrae Kim and Seokin Hong</p>
+                    <p class="venue"><em>Design Automation Conference, 2025</em></p>
+                    <div class="links">
+                        <a href="[YOUR_PDF_LINK_HERE].pdf" target="_blank" class="link-button">PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-entry">
+                <div class="conference-tag">
+                    <a href="http://iceic.org/" target="_blank" class="conf-button etc">ICEIC</a>
+                </div>
+                <div class="publication-details">
+                    <p class="title">Redefining PIM Architecture with Compact and Power-Efficient Microscaling</p>
+                    <p class="authors">Yoonho Jang, <strong>Hyeongjun Cho</strong> and Seokin Hong</p>
+                    <p class="venue"><em>International Conference on Electronics, Information, and Communications</em></p>
+                    <div class="links">
+                        <a href="[YOUR_PDF_LINK_HERE].pdf" target="_blank" class="link-button">PDF</a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="publication-entry">
+                <div class="conference-tag">
+                    <a href="https://en.wikipedia.org/wiki/Design_Automation_Conference" target="_blank" class="conf-button top-tier">DAC</a>
+                </div>
+                <div class="publication-details">
+                    <p class="title">Bank-Split PIM: Enabling Concurrent PIM and Memory Operations for LLM Inference in Heterogeneous Systems (Poster)</p>
+                    <p class="authors"><strong>Hyeongjun Cho</strong>, Yoonho Jang and Seokin Hong</p>
+                    <p class="venue"><em>Design Automation Conference, 2025</em></p>
+                    <div class="links">
+                        <a href="[YOUR_POSTER_PDF_LINK_HERE].pdf" target="_blank" class="link-button">POSTER</a>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
     </div>
